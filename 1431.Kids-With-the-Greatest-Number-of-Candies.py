@@ -20,7 +20,6 @@
 # Devuelve un resultado de matriz booleana de longitud n, donde el resultado [i] es verdadero si, después de darle al i-ésimo niño todos los caramelos adicionales, tendrá la mayor cantidad de caramelos entre todos los niños, o falso en caso contrario.
 # Tenga en cuenta que varios niños pueden tener la mayor cantidad de dulces.
 
-
 # Ejemplo 1:
 
 # Entrada: caramelos = [2,3,5,1,3], caramelos extra = 3
