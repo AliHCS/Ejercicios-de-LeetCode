@@ -19,24 +19,22 @@
  * @return {number}
  */
  var maxIncreaseKeepingSkyline = function(grid) {
-    const maxRows = [],maxColumns = []
-    for (let i = 0; i < grid.length; i++) {
-        let maxRow = 0, maxColumn = 0 
+    const maxRows = [],maxColumns = [] //Creamos 2 variables  donde guardaremos el maximo de las filas y las columnas
+    for (let i = 0; i < grid.length; i++) { //Usamos for anidado para poder recorrer la matriz
+        let maxRow = 0, maxColumn = 0 //Aqui guardaremos el valor mas alto para compararlo despues 
         for (let j = 0; j < grid[i].length; j++) {
-            if (grid[i][j] > maxRow ) maxRow = grid[i][j]
-            if (grid[j][i] > maxColumn )  maxColumn = grid[j][i]
-           
-            
+            if (grid[i][j] > maxRow ) maxRow = grid[i][j] //Validamos si el valor de fila es mayor, de ser asi lo agregamos a la variable
+            if (grid[j][i] > maxColumn )  maxColumn = grid[j][i]//Validamos si el valor de coluimna  es mayor, de ser asi lo agregamos a la variable
         }
-        maxRows[i] = maxRow
-        maxColumns[i] = maxColumn
+        maxRows[i] = maxRow //agregamos al valor al arreglo
+        maxColumns[i] = maxColumn //agregamos al valor al arreglo
     }  
     let sum = 0
     for (let i = 0; i < grid.length; i++) { 
-        for (let j = 0; j < grid.length; j++) {
-            const minimo = Math.min(maxRows[i],maxColumns[j]) 
-            sum += minimo - grid[i][j]
+        for (let j = 0; j < grid.length; j++) { //Usamos otro for anidado para agregar la suma de cada torre quedando con la diferencia en la variable suma
+            const minimo = Math.min(maxRows[i],maxColumns[j]) //Sacamos el valor minimo 
+            sum += minimo - grid[i][j] //Guardamos la diferencia 
         } 
     }
-    return sum
+    return sum // retornamos el valor 
   };
